@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
+import './App.css'
+import logo from './logo.svg'
+import Landing from './components/Landing'
+import Catalog from './components/Catalog'
+import MovieDetail from './components/MovieDetail'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      budget: 10.00
+    }
+  }
+
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <div id="link-header">
+            <Link to='/'>Home</Link>
+            <Link to='/catalog'>Catalog</Link>
+            <div id="logo">
+              <Link to='/'>REFLIX</Link>
+            </div>
+          </div>
+
+          <Route exact path='/' render={() => <Landing />}/>
+          <Route exact path='/catalog' render={() => <Catalog budget={this.state.budget}/>}/>
+          <Route exact path='/movies/:id' render={( {match} ) => <MovieDetail match={match}/>}/>
+        </div>
+      </Router>
+    )
+  }
 }
 
-export default App;
+export default App

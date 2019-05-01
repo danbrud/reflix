@@ -15,7 +15,7 @@ class Movie extends Component {
                 {movie.isRented ? <i className="fas fa-minus-circle" onClick={this.updateRented}></i>
                     : <i className="fas fa-plus-circle" onClick={this.updateRented}></i>}
                 <img src={movie.img} />
-                <Link to={`/movies/${movie.id}`}><h2>movie.title</h2></Link>
+                <Link to={`/movies/${movie.id}`}><h2>{movie.title}</h2></Link>
             </div>
         )
     }

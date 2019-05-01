@@ -28,6 +28,8 @@ class Catalog extends Component {
         this.setState({ movies })
     }
 
+    hasRentals = () => this.state.movies.some(m => m.isRented)
+
     getRentedSection = () => {
         let rentedMovies = this.state.movies.filter(m => m.isRented)
 
@@ -35,7 +37,7 @@ class Catalog extends Component {
             <div>
                 <p>Rented:</p>
                 <div id="rented-container">
-                    {rentedMovies.map(m => <Movie movie={m} key={m.id} />)}
+                    {rentedMovies.map(m => <Movie updateRented={this.updateRented} movie={m} key={m.id} />)}
                 </div>
             </div>
         )
@@ -51,6 +53,7 @@ class Catalog extends Component {
                     <input type="text" placeholder="Search a movie" value={this.state.searchValue} onChange={this.updateSearch} />
                     <p id="budget">Budget: ${this.props.budget}</p>
                 </div>
+                {this.hasRentals() ? this.getRentedSection() : null}
                 <div>
                     <p>Catalog:</p>
                     <div id="catalog-container">

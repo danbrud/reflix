@@ -13,12 +13,12 @@ class Catalog extends Component {
     updateSearch = event => this.setState({ searchValue: event.target.value })
 
 
-    hasRentals = () => this.props.movies.some(m => m.isRented)
+    hasRentals = () => this.props.movies.some(m => m.isRented[this.props.currentUserId])
 
     moviesToDisplay = movie => {
         return (
             movie.title.toLowerCase().includes(this.state.searchValue.toLowerCase())
-                ? <Movie updateRented={this.props.updateRented} movie={movie} key={movie.id} />
+                ? <Movie updateRented={this.props.updateRented} updateBudget={this.props.updateBudget} movie={movie} key={movie.id} />
                 : null
         )
     }
@@ -28,7 +28,7 @@ class Catalog extends Component {
 
         let element = (
             <div>
-                <p>Rented:</p>
+                <p>RENTED:</p>
                 <div className="catalog-container">
                     {rentedMovies.map(m => this.moviesToDisplay(m))}
                 </div>

@@ -28,6 +28,17 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+#budget {
+  display: grid;
+  justify-content: end;
+  margin-right: 30px;
+}
+
+input {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
 #link-header {
   color: white;
 }
@@ -57,6 +68,14 @@ h1 {
   cursor: pointer;
 }
 
+.movie-container #movie-title {
+  display: none;
+}
+
+.movie-container:hover #movie-title {
+  display: block;
+}
+
 #search-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr)
@@ -69,6 +88,7 @@ i {
   justify-self: end;
   margin-top: 10px;
   margin-right: 10px;
+  height: 20px;
 }
 
 p {
@@ -100,6 +120,11 @@ h2 {
   height: 300px;
   border-radius: 15px;
   display: grid;
+}
+
+.section {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .movie-detail-container > p {

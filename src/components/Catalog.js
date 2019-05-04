@@ -29,7 +29,7 @@ class Catalog extends Component {
 
         let element = (
             <div>
-                <p>RENTED:</p>
+                <p className="section">RENTED:</p>
                 <div className="catalog-container">
                     {rentedMovies.map(m => this.moviesToDisplay(m))}
                 </div>
@@ -58,7 +58,7 @@ class Catalog extends Component {
                 </div>
                 {this.hasRentals() ? this.getRentedSection() : null}
                 <div>
-                    <p>CATALOG:</p>
+                    <p className="section">CATALOG:</p>
                     <div className="catalog-container">
                         {this.props.movies
                             .map(m => this.moviesToDisplay(m))}

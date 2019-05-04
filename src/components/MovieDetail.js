@@ -18,7 +18,7 @@ class MovieDetail extends Component {
         return(
             <div className="movie-detail-container">
                 <h2>{movie.title}</h2>
-                <img src={movie.img} alt={`${movie.title} cover image`}/>
+                <img src={movie.img} alt={`${movie.title} cover`}/>
                 <p>{movie.descrShort}</p>
             </div>
         )

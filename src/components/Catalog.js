@@ -19,7 +19,7 @@ class Catalog extends Component {
     moviesToDisplay = movie => {
         return (
             movie.title.toLowerCase().includes(this.state.searchValue.toLowerCase())
-                ? <Movie currentUserId={this.props.currentUserId} updateRented={this.props.updateRented} updateBudget={this.props.updateBudget} movie={movie} key={movie.id} />
+                ? <Movie currentUserId={this.props.currentUserId} updateRented={this.props.updateRented} updateBudget={this.props.updateBudget} clickedMovie={this.props.clickedMovie} movie={movie} key={movie.id} />
                 : null
         )
     }

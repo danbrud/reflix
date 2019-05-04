@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom'
 class Movie extends Component {
 
 
-    clickedMovie = () => {
-        this.updateBudget()
-        this.updateRented()
-    }
+    clickedMovie = () => this.props.clickedMovie(this.props.movie.id)
+
+    // clickedMovie = () => {
+    //     this.updateBudget()
+    //     this.updateRented()
+    // }
 
     updateRented = () => this.props.updateRented(this.props.movie.id)
 
@@ -18,7 +20,6 @@ class Movie extends Component {
 
         let movie = this.props.movie
         
-
         return (
             <div className="movie-container" style={{ backgroundImage: `url(${movie.img})`, backgroundSize: '100% 100%' }}>
 

@@ -4,17 +4,7 @@ import { Link } from 'react-router-dom'
 
 class Movie extends Component {
 
-
     clickedMovie = () => this.props.clickedMovie(this.props.movie.id)
-
-    // clickedMovie = () => {
-    //     this.updateBudget()
-    //     this.updateRented()
-    // }
-
-    updateRented = () => this.props.updateRented(this.props.movie.id)
-
-    updateBudget = () => this.props.updateBudget(this.props.movie.id)
 
     render() {
 

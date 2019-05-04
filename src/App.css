@@ -28,7 +28,7 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-#budget {
+.user-info {
   display: grid;
   justify-content: end;
   margin-right: 30px;
@@ -76,7 +76,7 @@ h1 {
 
 #search-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr)
+  grid-template-columns: 2fr 1fr 1fr;
 }
 
 i {

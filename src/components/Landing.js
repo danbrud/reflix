@@ -3,8 +3,6 @@ import User from './User'
 
 class Landing extends Component {
 
-    
-
     render() {
         
         return(

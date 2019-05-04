@@ -54,7 +54,8 @@ class Catalog extends Component {
             <div id="catalog-page">
                 <div id="search-container">
                     <input type="text" placeholder="Search a movie" value={this.state.searchValue} onChange={this.updateSearch} />
-                    <p id="budget">BUDGET: ${user.budget}</p>
+                    <p className="user-info">BUDGET: ${user.budget}</p>
+                    <p className="user-info">USER: {user.name.toUpperCase()}</p>
                 </div>
                 {this.hasRentals() ? this.getRentedSection() : null}
                 <div>

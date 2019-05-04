@@ -30,25 +30,12 @@ class App extends Component {
 
 
   updateRented = (movie, bool) => {
-
-    // let userId = this.state.currentUserId
-
-    // let movies = [...this.state.movies]
-    // let movie = movies.find(m => m.id === id)
-
-    // if (movie.isRented[userId]) {
-    //   movie.isRented[userId] = false
-    // } else if (!movie.isRented[userId] && this.hasEnoughBudget(userId)) {
-    //   movie.isRented[userId] = true
-    // }
-
     movie.isRented[this.state.currentUserId] = bool
     return movie
-    // this.setState({ movies })
   }
 
   clickedMovie = id => {
-    
+
     let movies = [...this.state.movies]
     let movie = movies.find(m => m.id === id)
 
@@ -59,7 +46,7 @@ class App extends Component {
     let currentBudget = user.budget
 
     if (movie.isRented[userId]) {
-      
+
       movie = this.updateRented(movie, false)
       user = this.updateBudget(user, currentBudget + 3)
 
@@ -74,47 +61,19 @@ class App extends Component {
 
     this.setState({ movies })
     this.setState({ users })
-
   }
 
   hasEnoughBudget = userId => {
-
     let user = this.state.users.find(u => u.id === userId)
     return (user.budget - 3) >= 0 ? true : false
-
   }
 
   updateBudget = (user, newBudget) => {
-
-    // let userId = this.state.currentUserId
-
-    // let movie = this.state.movies.find(m => m.id === id)
-    // let users = [...this.state.users]
-    // let user = users.find(u => u.id === userId)
-
-    // let currentBudget = user.budget
-
-    // if (movie.isRented[userId]) {
-
-    //   user.budget = currentBudget + 3
-    //   this.setState({ users })
-
-    // } else if (!movie.isRented[userId] && this.hasEnoughBudget(userId)) {
-
-    //   user.budget = currentBudget - 3
-    //   this.setState({ users })
-
-    // } else if (!this.hasEnoughBudget(userId)) {
-    //   alert("You don't have enough money. Please return a movie and try again.")
-    // }
-
     user.budget = newBudget
     return user
-
   }
 
-  updateUser = id => this.setState({currentUserId: id})
-
+  updateUser = id => this.setState({ currentUserId: id })
 
   render() {
 
@@ -132,7 +91,7 @@ class App extends Component {
           </div>
 
           <Route exact path='/' render={() => <Landing users={this.state.users} updateUser={this.updateUser} />} />
-          <Route exact path='/catalog' render={() => <Catalog movies={movies} updateRented={this.updateRented} updateBudget={this.updateBudget} users={this.state.users} clickedMovie={this.clickedMovie} currentUserId={this.state.currentUserId} />}/>
+          <Route exact path='/catalog' render={() => <Catalog movies={movies} users={this.state.users} clickedMovie={this.clickedMovie} currentUserId={this.state.currentUserId} />} />
           <Route exact path='/movies/:id' render={({ match }) => <MovieDetail match={match} movies={movies} currentUserId={this.state.currentUserId} />} />
         </div>
       </Router>

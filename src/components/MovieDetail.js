@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
+import {Redirect} from 'react-router-dom'
 
 class MovieDetail extends Component {
 
-    getMovieId = () => this.props.match.params.id
+    getMovieId = () => parseInt(this.props.match.params.id)
+
+    redirect = () => <Redirect to="/" />
 
     render() {
 
-        let movie = this.props.movies.find(m => m.id == this.getMovieId())
+        if(this.props.currentUserId < 0) {
+            return this.redirect()
+        }
+
+        let movie = this.props.movies.find(m => m.id === this.getMovieId())
 
         return(
             <div className="movie-detail-container">

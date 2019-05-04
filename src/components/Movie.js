@@ -22,7 +22,7 @@ class Movie extends Component {
         return (
             <div className="movie-container" style={{ backgroundImage: `url(${movie.img})`, backgroundSize: '100% 100%' }}>
 
-                {movie.isRented[this.props.currentUser] ? <i className="fas fa-minus-circle" onClick={this.clickedMovie}></i>
+                {movie.isRented[this.props.currentUserId] ? <i className="fas fa-minus-circle" onClick={this.clickedMovie}></i>
                     : <i className="fas fa-plus-circle" onClick={this.clickedMovie}></i>}
 
                 <Link to={`/movies/${movie.id}`}><h2>{movie.title}</h2></Link>

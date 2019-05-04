@@ -98,8 +98,8 @@ class App extends Component {
           </div>
 
           <Route exact path='/' render={() => <Landing users={this.state.users} updateUser={this.updateUser} />} />
-          <Route exact path='/catalog' render={() => <Catalog movies={movies} updateRented={this.updateRented} updateBudget={this.updateBudget} />} currentUserId={this.state.currentUserId}/>
-          <Route exact path='/movies/:id' render={({ match }) => <MovieDetail match={match} movies={movies} />} />
+          <Route exact path='/catalog' render={() => <Catalog movies={movies} updateRented={this.updateRented} updateBudget={this.updateBudget} users={this.state.users} currentUserId={this.state.currentUserId} />}/>
+          <Route exact path='/movies/:id' render={({ match }) => <MovieDetail match={match} movies={movies} currentUserId={this.state.currentUserId} />} />
         </div>
       </Router>
     )

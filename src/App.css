@@ -134,7 +134,7 @@ h2 {
 }
 
 #logo > a:hover {
-  color: rgb(216, 15, 15);
+  color: white;
 }
 
 #logo {
@@ -142,6 +142,7 @@ h2 {
   justify-content: end;
   margin-right: 20px;
   align-content: center;
+  color: rgb(216, 15, 15);
 }
 
 .movie-detail-container > p {

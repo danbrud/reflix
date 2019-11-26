@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Reflix
 
-## Available Scripts
+Reflix is a front end movie rental app built with React. Users are able to choose their user and rent movies based on their budget. Each user has a unique budget. Users can also click on the movie to see more information about the movie.
 
-In the project directory, you can run:
+Demo: [https://dannys-reflix.herokuapp.com/](https://dannys-reflix.herokuapp.com/)
 
-### `npm start`
+## Table Of Contents
+- [Reflix](#reflix)
+  * [Running the project](#running-the-project)
+  * [Screenshots](#screenshots)
+    + [Select User](#select-user)
+    + [Movie Catalog](#movie-catalog)
+    + [Search Filter](#search-filter)
+    + [Rented Movies](#rented-movies)
+    + [Movie Details](#movie-details)
+  * [Tech Stack](#tech-stack)
+  * [TODO](#todo)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Running the project
+1. Clone the repo.
+2. Run `npm install`.
+3. Run `npm start`.
+4. Navigate to `http://localhost:3000` (or other port based on the message in the console).
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+### Select User
+Main screen for user to select who they are.
+<p align="center"><img src="assets/user-select.png" width="300" /></p>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Movie Catalog
+A user can see their budget and all the available movies to rent.
+<p align="center"><img src="assets/movie-catalog.png" width="300" /></p>
 
-### `npm run build`
+### Search Filter
+As a user searches the movie catalog filters the movie based on the name.
+<p align="center"><img src="assets/search-filter.png" width="300" /></p>
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Rented Movies
+Once a user rents a movie/s a new 'Rented' section appears on the page showing which movies they have rented.
+<p align="center"><img src="assets/rented-movie.png" width="300" /></p>
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Movie Details
+A user can click on a movie to see more information about the movie.
+<p align="center"><img src="assets/movie.png" width="300" /></p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Techstack
+1. React
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## TODO
+1. Get many movies from movie API.
+2. View movies by category.
+3. Persist rented movies with local storage.
+4. Create full stack with NodeJS, Express, Mongo.
